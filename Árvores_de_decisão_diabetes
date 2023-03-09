@@ -9,10 +9,10 @@ from sklearn import metrics
 
 col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
 # carregando os dados
-pima = pd.read_csv("diabetes.csv", header=None, names=col_names)
+df = pd.read_csv("diabetes.csv", header=None, names=col_names)
 
 
-pima.head()
+df.head()
 
 
 #split dataset in features and target variable
