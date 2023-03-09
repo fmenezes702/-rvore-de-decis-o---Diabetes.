@@ -54,5 +54,5 @@ y_pred = clf.predict(X_test)
 
 
 # Acurácia do modelo.
-acuracia_2 = metrics.accuracy_score(y_test, y_pred))
+acuracia_2 = metrics.accuracy_score(y_test, y_pred)
 print(acuracia)
