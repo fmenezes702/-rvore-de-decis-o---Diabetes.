@@ -2,13 +2,13 @@
 
 
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
-from sklearn.model_selection import train_test_split # Import train_test_split function
-from sklearn import metrics #Import scikit-learn metrics module for accuracy calculation
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn import metrics
 
 
 col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
-# load dataset
+# carregando os dados
 pima = pd.read_csv("diabetes.csv", header=None, names=col_names)
 
 
@@ -21,37 +21,38 @@ X = pima[feature_cols] # Features
 y = pima.label # Target variable
 
 
-# Split dataset into training set and test set
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1) # 70% training and 30% test
+# eparando a base de dados em base de dados de teste e base de dados de treinamento.
+# 70% treino, 30% teste.
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)  
 
 
-# Create Decision Tree classifer object
+# criar objeto de árvore de decisão.
 clf = DecisionTreeClassifier()
 
 
-# Train Decision Tree Classifer
+# Treinar classificador de árvore de decisão.
 clf = clf.fit(X_train,y_train)
 
 
-#Predict the response for test dataset
+#prever a resposta para a base de dados.
 y_pred = clf.predict(X_test)
 
 
-# Model Accuracy, how often is the classifier correct?
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+# Acurácia do modelo.
+acuracia = metrics.accuracy_score(y_test, y_pred)
 
 
-# Create Decision Tree classifer object
+# criar objeto de árvore de decisão.
 clf = DecisionTreeClassifier(criterion="entropy", max_depth=3)
 
 
-# Train Decision Tree Classifer
+# classificador de treino da árvore de decisão.
 clf = clf.fit(X_train,y_train)
 
 
-#Predict the response for test dataset
 y_pred = clf.predict(X_test)
 
 
-# Model Accuracy, how often is the classifier correct?
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+# Acurácia do modelo.
+acuracia_2 = metrics.accuracy_score(y_test, y_pred))
+print(acuracia)
