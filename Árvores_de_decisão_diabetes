@@ -17,8 +17,8 @@ df.head()
 
 #split dataset in features and target variable
 feature_cols = ['pregnant', 'insulin', 'bmi', 'age','glucose','bp','pedigree']
-X = pima[feature_cols] # Features
-y = pima.label # Target variable
+X = df[feature_cols] # Features
+y = df.label # Target variable
 
 
 # eparando a base de dados em base de dados de teste e base de dados de treinamento.
